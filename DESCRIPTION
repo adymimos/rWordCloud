@@ -1,7 +1,7 @@
-Package: bubbles
+Package: solrCloud 
 Title: d3 word Cloud htmlwidget
 Version: 0.1
-Authors@R: c(person("Adline", "Dsilva", role = c("cre", "aut"), email = "adlinedsilva@gmail.com"),
+Authors@R: c(person("Adline", "Dsilva", role = c("cre", "aut"), email = "adline.dsilva@mimos.my"),
     person("Jeff", "Heer", role = "aut"))
 Description: htmlwidget package for  word cloud using solr
     http://bl.ocks.org/mbostock/4063269.
