@@ -38,7 +38,7 @@ solrCloud <- function(value, label, tooltip = "", color = "#EEEEEE",
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'solrCloud'
+    name = 'solrCloud',
     x,
     width = width,
     height = height,
