@@ -4,6 +4,7 @@ dependencies:
   src: htmlwidgets/lib/d3
   script: 
           - d3.js
+          - d3.layout.cloud.js
           - fetchData.js
           - fisheye.js
           - index.js
