@@ -1,0 +1,13 @@
+Package: bubbles
+Title: d3 word Cloud htmlwidget
+Version: 0.1
+Authors@R: c(person("Adline", "Dsilva", role = c("cre", "aut"), email = "adlinedsilva@gmail.com"),
+    person("Jeff", "Heer", role = "aut"))
+Description: htmlwidget package for  word cloud using solr
+    http://bl.ocks.org/mbostock/4063269.
+Depends:
+    R (>= 3.0)
+Imports:
+    htmlwidgets
+License: file LICENSE
+LazyData: true

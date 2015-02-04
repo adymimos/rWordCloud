@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>EE</title>
+<style>
+
+#chart1 {
+  width: 1000px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+text {
+  font: 10px sans-serif;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+</style>
+
+<!--
+ * The fork me on Github picture is designed by D3.org     Here I used it by acknowledging the source
+ * If the use is inappropriate or any copyright is infringed, please inform to amend.
+ * -->
+
+<h2><center>Word Cloud E-Aduan</center></h2>
+<div id="selectedWord"></div>
+<div id="selectedWordLink">
+</div>
+
+<div id="chart1">
+</div>
+
+<script src="http://d3js.org/d3.v2.min.js?2.9.4"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="d3.layout.cloud.js"></script>
+<script src="fetchData.js"></script>
+<script src="stopWord.js"></script>
+<script src="fisheye.js"></script>
+
+<script>
+
+  //initialization
+  var width=1000,
+      height=500;
+  _setUpStopWord();
+  _init(); 
+  var fill = d3.scale.category20(); //color scale
+  var maxFreq=wordFreqArray[0].size;
+  var s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);//wordcloud size scaling 
+  var svg;
+
+  //word cloud layout 
+  var cloud = d3.layout.cloud().size([width, height])
+      .words(wordFreqArray)
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 2) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return s(d.size); })
+      .on("end", draw)
+      .start();
+
+
+ 
+</script>
