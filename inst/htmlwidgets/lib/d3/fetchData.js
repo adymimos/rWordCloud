@@ -29,43 +29,7 @@ function waitForElement(){
         waitForElement();
     }
 }
-
-function on_data(data) {
-        $('#results').empty();
-        var docs = data.response.docs;
-	newsArray=new Array();
-        $.each(docs, function(i, item) {
-	     var article=new Object();
-                                article.title=item.CaseId;
-                                article.date=item.Date;
-                                article.category=item.Category;
-                                article.content=item.Summary;
-                                article.link=item.Status;
-
-                                newsArray[i]=article;
-
-        });
-  origArray = new Array();
-  origArray = newsArray;
-	freqCounting();
-  
-  fill = d3.scale.category20(); //color scale
-  maxFreq=wordFreqArray[0].size;
-  s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);//wordcloud size scaling 
-  svg;
-
-  //word cloud layout 
-  cloud = d3.layout.cloud().size([width, height])
-      .words(wordFreqArray)
-      .padding(5)
-      .rotate(function() { return ~~(Math.random() * 2) * 90; })
-      .font("Impact")
-      .fontSize(function(d) { return s(d.size); })
-      .on("end", draw)
-      .start();
-      
-  //main part: draw function of the cloud layout
-  function draw(words) {
+function draw(words) {
     svg=d3.select("#chart1").append("svg");
 
     wordCloudGraph=svg.attr("width", width)
@@ -153,6 +117,42 @@ function on_data(data) {
 
 
   }
+function on_data(data) {
+        $('#results').empty();
+        var docs = data.response.docs;
+	newsArray=new Array();
+        $.each(docs, function(i, item) {
+	     var article=new Object();
+                                article.title=item.CaseId;
+                                article.date=item.Date;
+                                article.category=item.Category;
+                                article.content=item.Summary;
+                                article.link=item.Status;
+
+                                newsArray[i]=article;
+
+        });
+  origArray = new Array();
+  origArray = newsArray;
+	freqCounting();
+  
+  fill = d3.scale.category20(); //color scale
+  maxFreq=wordFreqArray[0].size;
+  s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);//wordcloud size scaling 
+  svg;
+
+  //word cloud layout 
+  cloud = d3.layout.cloud().size([width, height])
+      .words(wordFreqArray)
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 2) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return s(d.size); })
+      .on("end", draw)
+      .start();
+      
+  //main part: draw function of the cloud layout
+  
       
     }
 
