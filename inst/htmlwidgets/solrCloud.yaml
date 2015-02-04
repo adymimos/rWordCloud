@@ -9,3 +9,7 @@ dependencies:
           - fisheye.js
           - index.js
           - stopWord.js
+- name: jquery
+  version: 1.7.2
+  src: htmlwidgets/lib/jquery
+  script: jquery-1.7.2.min.js
