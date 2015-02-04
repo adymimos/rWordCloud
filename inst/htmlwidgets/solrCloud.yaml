@@ -7,7 +7,6 @@ dependencies:
           - d3.layout.cloud.js
           - fetchData.js
           - fisheye.js
-          - index.js
           - stopWord.js
 - name: jquery
   version: 1.7.2
