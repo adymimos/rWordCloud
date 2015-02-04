@@ -24,7 +24,7 @@
 #' @import htmlwidgets
 #'   
 #' @export
-bubbles <- function(value, label, tooltip = "", color = "#EEEEEE",
+solrCloud <- function(value, label, tooltip = "", color = "#EEEEEE",
   textColor = "#333333", width = NULL, height = NULL) {
 
   # forward options using x
@@ -38,11 +38,11 @@ bubbles <- function(value, label, tooltip = "", color = "#EEEEEE",
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'bubbles',
+    name = 'solrCloud'
     x,
     width = width,
     height = height,
-    package = 'bubbles',
+    package = 'solrCloud',
     sizingPolicy = sizingPolicy(
       defaultWidth = 600,
       defaultHeight = 600
@@ -60,13 +60,13 @@ bubbles <- function(value, label, tooltip = "", color = "#EEEEEE",
 #' @param quoted Is \code{expr} a quoted expression (with \code{quote()})?
 #'   
 #' @export
-bubblesOutput <- function(outputId, width = '600px', height = '600px'){
-  shinyWidgetOutput(outputId, 'bubbles', width, height, package = 'bubbles')
+solrCloudOutput <- function(outputId, width = '600px', height = '600px'){
+  shinyWidgetOutput(outputId, 'solrCloud', width, height, package = 'solrCloud')
 }
 
 #' @rdname bubblesOutput
 #' @export
 renderBubbles <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  shinyRenderWidget(expr, bubblesOutput, env, quoted = TRUE)
+  shinyRenderWidget(expr, solrCloudOutput, env, quoted = TRUE)
 }
