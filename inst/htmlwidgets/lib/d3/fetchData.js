@@ -90,6 +90,7 @@ function init_data(data)
                                 newsArray[i]=article;
 
         });
+  freqCounting();
 }
 function on_data(data) {
         $('#results').empty();
