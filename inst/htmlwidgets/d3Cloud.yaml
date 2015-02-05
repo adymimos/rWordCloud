@@ -1,0 +1,14 @@
+dependencies:
+- name: d3
+  version: 3.5.3
+  src: htmlwidgets/lib/d3
+  script: 
+          - d3.js
+          - d3.layout.cloud.js
+          - fetchData.js
+          - fisheye.js
+          - stopWord.js
+- name: jquery
+  version: 1.7.2
+  src: htmlwidgets/lib/jquery
+  script: jquery-1.7.2.min.js
