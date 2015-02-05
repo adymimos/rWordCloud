@@ -12,7 +12,7 @@ d3Cloud <- function(text, size, tooltip = "", color = "#EEEEEE",
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'solrCloud',
+    name = 'd3Cloud',
     x,
     width = width,
     height = height,
