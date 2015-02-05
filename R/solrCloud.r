@@ -24,12 +24,12 @@
 #' @import htmlwidgets
 #'   
 #' @export
-solrCloud <- function(value, label, tooltip = "", color = "#EEEEEE",
+solrCloud <- function(content, label, tooltip = "", color = "#EEEEEE",
   textColor = "#333333", width = NULL, height = NULL) {
 
   # forward options using x
   x = data.frame(
-    value = value,
+    content = content,
     label = label,
     tooltip = tooltip,
     color = color,
