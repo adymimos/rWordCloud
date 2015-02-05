@@ -8,28 +8,6 @@ var numWordsDisplay=110;
   var width=1000,
       height=500;
 
-function sleep(milliseconds) {
-  console.log('Going to sleep');
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-  console.log('wakeup');
-}
-
-
-function waitForElement(){
-    if(typeof wordFreqArray !== "undefined"){
-        //variable exists, do what you want
-        console.log('element found');
-    }
-    else{
-        
-        waitForElement();
-    }
-}
 function draw(words) {
     svg=d3.select("#chart1").append("svg");
 
@@ -49,26 +27,6 @@ function draw(words) {
           return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
         })
         .text(function(d) { return d.text; })
-
-        //mouse on event
-        .on("mousemove", function(d) {
-            console.log("Mouse Move:"+d.text);   
-            
-
-
-         
-        
-
-
-
-        })
-
-        //mouse leave event
-        .on("mouseout", function(d) {
-            console.log("Mouse Out:"+d.text); 
-
-
-        })
 
         //mouse click event
         //do the drill down of the selected key words
@@ -118,6 +76,21 @@ function draw(words) {
 
 
   }
+  
+function init_data(data)
+{
+	newsArray=new Array();
+	 $.each(data, function(i, item) {
+	     var article=new Object();
+                                article.title=item.label;
+                                article.date=item.label;
+                                article.category=item.label;
+                                article.content=item.content;
+                                article.link=item.label;
+                                newsArray[i]=article;
+
+        });
+}
 function on_data(data) {
         $('#results').empty();
         var docs = data.response.docs;
