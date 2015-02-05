@@ -4,6 +4,8 @@
 
 This is just an experimentation of https://github.com/ywng/Progressive-News-Cloud app ( this app no longer works, but i used its component )
 
+word count is performed by javascript which tends to make it slow
+
 
 ```server.R
 library(solrCloud)
