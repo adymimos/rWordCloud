@@ -80,13 +80,13 @@ function draw(words) {
 function init_data(data)
 {
 	newsArray=new Array();
-  	for(var item in data) {
+  	for(var i=0; i < data.content.length; i++) {
 		var article=new Object();
-		article.title=item.label;
-        article.date=item.label;
-        article.category=item.label;
-        article.content=item.content;
-        article.link=item.label;
+		article.title=data.label[i];
+        article.date=data.label[i];
+        article.category=data.label[i];
+        article.content=data.content[i];
+        article.link=data.label[i];
         newsArray[i]=article;
 
 	} 
