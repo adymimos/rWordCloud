@@ -62,7 +62,7 @@ HTMLWidgets.widget({
     maxFreq=df[0].size;
     s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
     cloud.size([width, height])
-      .words(wordFreqArray)
+      .words(df)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
       .font("Impact")
       .fontSize(function(d) { return s(d.size); })
