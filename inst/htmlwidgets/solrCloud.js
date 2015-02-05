@@ -7,7 +7,7 @@ HTMLWidgets.widget({
   renderOnNullValue: true,
 
   initialize: function(el, width, height) {
-
+  var newsArray;
   _setUpStopWord();
   _init()
   var fill = d3.scale.category20(); //color scale
