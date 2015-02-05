@@ -51,6 +51,7 @@ HTMLWidgets.widget({
      _init(); 
     init_data(x);
     freqCounting();
+    maxFreq=wordFreqArray[0].size;
     s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
      cloud.size([width, height])
       .words(wordFreqArray)
