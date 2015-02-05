@@ -2,25 +2,34 @@
 
 # solrCloud
 
-This is just an experimentation of https://github.com/ywng/Progressive-News-Cloud app ( this app no longer works, but i used its component )
+Experimentation to get interactive d3 word cloud which works with
 
-word count is performed by javascript which tends to make it slow
+   - twitter
+   - solr
+   - jdbc calls (might not be implemented)
 
 
 ```server.R
 library(solrCloud)
+library(XML)
 function(input, output, session) {
-output$solrCloud <- rendersolrCloud({
-   content <- c('test test1 test2 hi ho hurray hi hurray ho ho ho ho','ho hi uh ho','test')
-   label <- c('a1','a2','a3')
-   solrCloud(content = content, label = label)
+  output$solrCloud <- rendersolrCloud({
+    doc.html = htmlTreeParse('http://en.wikipedia.org/wiki/R_(programming_language)',
+                             useInternal = TRUE)
+    
+    doc.text = unlist(xpathApply(doc.html, '//p', xmlValue))
+    
+    doc.text = gsub('\\n', ' ', doc.text)
+    
+    data <- as.data.frame(doc.text)
+   solrCloud(content = doc.text, label = rownames(data))
   })
 }
 
+
+ui.R
 library(solrCloud)
 fluidPage(
 solrCloudOutput("solrCloud", width = "100%", height = 500)
 )
 ```
-output
-![alt tag](https://raw.github.com/ywng/Progressive-News-Cloud/master/screen%20shot%20main.png)
