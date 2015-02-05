@@ -9,6 +9,7 @@ HTMLWidgets.widget({
   initialize: function(el, width, height) {
 
   _setUpStopWord();
+  _init()
   var fill = d3.scale.category20(); //color scale
   var maxFreq=100;
   var s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);//wordcloud size scaling 
@@ -48,7 +49,7 @@ HTMLWidgets.widget({
     var df = HTMLWidgets.dataframeToD3(x);
      _setUpStopWord();
      _init(); 
-
+    freqCounting();
      cloud.size([width, height])
       .words(wordFreqArray)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
