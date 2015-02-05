@@ -29,8 +29,6 @@ solrCloudOutput <- function(outputId, width = '600px', height = '600px'){
   shinyWidgetOutput(outputId, 'solrCloud', width, height, package = 'solrCloud')
 }
 
-#' @rdname bubblesOutput
-#' @export
 rendersolrCloud <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
   shinyRenderWidget(expr, solrCloudOutput, env, quoted = TRUE)
