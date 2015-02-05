@@ -4,7 +4,16 @@
 
 This is just an experimentation of https://github.com/ywng/Progressive-News-Cloud app ( this app no longer works, but i used its component )
 
-word count is performed by javascript which tends to make it slow
+
+
+word count is performed by javascript which tends to make it slow. For simpler implementation checkout d3cloud branch
+
+to install
+```
+require(devtools)
+install_github('adymimos/solrCloud')
+
+```
 
 
 ```server.R
