@@ -49,6 +49,7 @@ HTMLWidgets.widget({
     var df = HTMLWidgets.dataframeToD3(x);
      _setUpStopWord();
      _init(); 
+    init_data(x);
     freqCounting();
      cloud.size([width, height])
       .words(wordFreqArray)
