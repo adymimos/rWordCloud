@@ -80,17 +80,17 @@ function draw(words) {
 function init_data(data)
 {
 	newsArray=new Array();
-	 $.each(data, function(i, item) {
-	     var article=new Object();
-                                article.title=item.label;
-                                article.date=item.label;
-                                article.category=item.label;
-                                article.content=item.content;
-                                article.link=item.label;
-                                newsArray[i]=article;
+  	for(var i=0; i < data.length; i++) {
+		var article=new Object();
+		article.title=item.label;
+        article.date=item.label;
+        article.category=item.label;
+        article.content=item.content;
+        article.link=item.label;
+        newsArray[i]=article;
 
-        });
-  freqCounting();
+	} 
+  	freqCounting();
 }
 function on_data(data) {
         $('#results').empty();
