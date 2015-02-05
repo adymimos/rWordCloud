@@ -11,6 +11,12 @@ Experimentation to get interactive d3 word cloud which works with
 
 Its implemented with htmlwidget(really cool package, able to create a package with 2 days of javascript experience)
 
+To install
+```
+require(devtools)
+install_github('adymimos/solrCloud',ref='d3cloud')
+```
+
 ```server.R
 library(solrCloud)
 function(input, output, session) {
