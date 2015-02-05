@@ -7,9 +7,7 @@ HTMLWidgets.widget({
   renderOnNullValue: true,
 
   initialize: function(el, width, height) {
-  var newsArray;
-  _setUpStopWord();
-   //color scale
+
   var svg;
   //word cloud layout 
   var cloud = d3.layout.cloud().size([width, height])
@@ -27,7 +25,6 @@ HTMLWidgets.widget({
   renderValue: function(el, x, instance) {
     var fill = d3.scale.category20();
     function draws(words) {
- //   svg=d3.select("#chart1").append("svg");
     svg = instance.svg;
     wordCloudGraph=svg.attr("width", width)
       .attr("height", height)
@@ -62,9 +59,7 @@ HTMLWidgets.widget({
     var height = el.offsetHeight;
     svg.attr("width", width).attr("height", height);
     var df = HTMLWidgets.dataframeToD3(x);
-    init_data(x);
-    freqCounting();
-    maxFreq=wordFreqArray[0].size;
+    maxFreq=df[0].size;
     s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
     cloud.size([width, height])
       .words(wordFreqArray)
