@@ -113,7 +113,7 @@ function on_data(data) {
 
   fill = d3.scale.category20(); //color scale
   maxFreq=wordFreqArray[0].size;
-  s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);//wordcloud size scaling 
+  s = d3.scale.linear().domain([1,100]).range([10, 90]);//wordcloud size scaling 
   var svg;
 
   //word cloud layout 
