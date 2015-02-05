@@ -1,6 +1,6 @@
 HTMLWidgets.widget({
 
-  name: 'solrCloud',
+  name: 'd3Cloud',
 
   type: 'output',
   
