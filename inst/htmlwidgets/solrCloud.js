@@ -45,12 +45,13 @@ HTMLWidgets.widget({
     var width = el.offsetWidth;
     var height = el.offsetHeight;
     svg.attr("width", width).attr("height", height);
-
+    
     var df = HTMLWidgets.dataframeToD3(x);
      _setUpStopWord();
      _init(); 
     init_data(x);
     freqCounting();
+    s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
      cloud.size([width, height])
       .words(wordFreqArray)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
