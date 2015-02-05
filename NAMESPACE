@@ -2,4 +2,5 @@
 
 export(solrCloud)
 export(solrCloudOutput)
+export(rendersolrCloud)
 import(htmlwidgets)
