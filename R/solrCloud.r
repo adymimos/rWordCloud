@@ -1,10 +1,10 @@
-solrCloud <- function(content, label, tooltip = "", color = "#EEEEEE",
+d3Cloud <- function(text, size, tooltip = "", color = "#EEEEEE",
   textColor = "#333333", width = NULL, height = NULL) {
 
   # forward options using x
   x = data.frame(
-    content = content,
-    label = label,
+    text = text,
+    size = size,
     tooltip = tooltip,
     color = color,
     textColor = textColor
@@ -25,11 +25,11 @@ solrCloud <- function(content, label, tooltip = "", color = "#EEEEEE",
 }
 
 
-solrCloudOutput <- function(outputId, width = '600px', height = '600px'){
-  shinyWidgetOutput(outputId, 'solrCloud', width, height, package = 'solrCloud')
+d3CloudOutput <- function(outputId, width = '600px', height = '600px'){
+  shinyWidgetOutput(outputId, 'd3Cloud', width, height, package = 'solrCloud')
 }
 
-rendersolrCloud <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderd3Cloud <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  shinyRenderWidget(expr, solrCloudOutput, env, quoted = TRUE)
+  shinyRenderWidget(expr, d3CloudOutput, env, quoted = TRUE)
 }
