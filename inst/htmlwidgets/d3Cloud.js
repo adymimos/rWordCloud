@@ -43,6 +43,11 @@ HTMLWidgets.widget({
         })
         .text(function(d) { return d.text; })
   }
+  
+    if ( instance.lastValue !== undefined) {
+        svg.remove();
+        console.log('Clearing svg');
+    }
     // Store the current value so we can easily call renderValue
     // from the resize method below, which doesn't give us an x
     // value
