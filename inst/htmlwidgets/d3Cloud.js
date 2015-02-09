@@ -44,21 +44,15 @@ HTMLWidgets.widget({
         .text(function(d) { return d.text; })
   }
         var svg = instance.svg;
-    if ( instance.lastValue !== undefined) {
-        svg.remove();
-        console.log('Clearing svg');
-         
-    }
-    // Store the current value so we can easily call renderValue
-    // from the resize method below, which doesn't give us an x
-    // value
-    instance.lastValue = x;
+        var cloud = instance.solrCloud;
+   
+
 
     // Retrieve our svg and bubble objects that were created in
     // the initialize method above
 
 	//svg.remove(); //clearing old stuffs
-    var cloud = instance.solrCloud;
+    
     
     // Resize our svg element and bubble layout according to the
     // size of the actual DOM element
@@ -68,7 +62,12 @@ HTMLWidgets.widget({
     var df = HTMLWidgets.dataframeToD3(x);
     maxFreq=df[0].size;
     s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
-    d3.layout.cloud().size([width, height])
+     if ( instance.lastValue !== undefined) {
+        svg.remove();
+        console.log('Clearing svg');
+         
+    }
+    cloud = d3.layout.cloud().size([width, height])
               .words(df)
               .padding(5)
               .rotate(function() { return ~~(Math.random() * 2) * 90; })
@@ -83,6 +82,10 @@ HTMLWidgets.widget({
  //     .fontSize(function(d) { return s(d.size); })
  //     .on("end", draws)
  //     .start();
+     // Store the current value so we can easily call renderValue
+    // from the resize method below, which doesn't give us an x
+    // value
+    instance.lastValue = x;
   
   },
 
