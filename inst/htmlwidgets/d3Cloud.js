@@ -43,7 +43,7 @@ HTMLWidgets.widget({
         })
         .text(function(d) { return d.text; })
   }
-  
+        var svg = instance.svg;
     if ( instance.lastValue !== undefined) {
         svg.remove();
         console.log('Clearing svg');
@@ -55,7 +55,7 @@ HTMLWidgets.widget({
 
     // Retrieve our svg and bubble objects that were created in
     // the initialize method above
-    var svg = instance.svg;
+
 	//svg.remove(); //clearing old stuffs
     var cloud = instance.solrCloud;
     
