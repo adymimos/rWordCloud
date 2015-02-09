@@ -26,7 +26,6 @@ HTMLWidgets.widget({
     var fill = d3.scale.category20();
     function draws(words) {
     svg = instance.svg;
-    svg.remove();
     wordCloudGraph=svg.attr("width", width)
       .attr("height", height)
       .append("g")
