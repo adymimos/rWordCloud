@@ -63,7 +63,7 @@ HTMLWidgets.widget({
     maxFreq=df[0].size;
     s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
      if ( instance.lastValue !== undefined) {
-        svg.empty();
+        svg.remove();
         console.log('Clearing svg');
          
     }
