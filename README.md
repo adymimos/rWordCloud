@@ -36,3 +36,4 @@ fluidPage(
 d3CloudOutput("d3Cloud", width = "100%", height = 500)
 )
 ```
+![alt tag](https://raw.githubusercontent.com/adymimos/solrCloud/d3cloud/sample.png)
