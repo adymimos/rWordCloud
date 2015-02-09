@@ -26,6 +26,7 @@ HTMLWidgets.widget({
     var fill = d3.scale.category20();
     function draws(words) {
     svg = instance.svg;
+    svg.remove();
     wordCloudGraph=svg.attr("width", width)
       .attr("height", height)
       .append("g")
@@ -51,7 +52,7 @@ HTMLWidgets.widget({
     // Retrieve our svg and bubble objects that were created in
     // the initialize method above
     var svg = instance.svg;
-	svg.remove(); //clearing old stuffs
+	//svg.remove(); //clearing old stuffs
     var cloud = instance.solrCloud;
     
     // Resize our svg element and bubble layout according to the
