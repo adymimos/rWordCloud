@@ -3,4 +3,7 @@
 export(d3TextCloud)
 export(d3TextCloudOutput)
 export(renderd3TextCloud)
+export(d3Cloud)
+export(d3CloudOutput)
+export(renderd3Cloud)
 import(htmlwidgets)
