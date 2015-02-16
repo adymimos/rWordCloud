@@ -43,17 +43,26 @@ HTMLWidgets.widget({
         })
         .text(function(d) { return d.text; })
   }
-    // Store the current value so we can easily call renderValue
-    // from the resize method below, which doesn't give us an x
-    // value
-    instance.lastValue = x;
+   
+
 
     // Retrieve our svg and bubble objects that were created in
     // the initialize method above
-    var svg = instance.svg;
-	svg.remove(); //clearing old stuffs
-    var cloud = instance.rWordCloud;
+
+	//svg.remove(); //clearing old stuffs
+     if ( instance.lastValue !== undefined) {
+        svg.remove();
+        console.log('Clearing svg');
+	 var svg = d3.select(el).append("svg")
+        .attr("class", "rWordCloud");
+	instance.svg = svg;
+         
+    }
     
+    
+        var svg = instance.svg;
+        var cloud = instance.rWordCloud;
+
     // Resize our svg element and bubble layout according to the
     // size of the actual DOM element
     var width = el.offsetWidth;
@@ -62,13 +71,25 @@ HTMLWidgets.widget({
     var df = HTMLWidgets.dataframeToD3(x);
     maxFreq=df[0].size;
     s = d3.scale.linear().domain([1,maxFreq]).range([10, 90]);
-    cloud.size([width, height])
-      .words(df)
-      .rotate(function() { return ~~(Math.random() * 2) * 90; })
-      .font("Impact")
-      .fontSize(function(d) { return s(d.size); })
-      .on("end", draws)
-      .start();
+    cloud = d3.layout.cloud().size([width, height])
+              .words(df)
+              .padding(5)
+              .rotate(function() { return ~~(Math.random() * 2) * 90; })
+              .font("Impact")
+              .fontSize(function(d) { return s(d.size); })
+              .on("end", draws)
+              .start();
+ //   cloud.size([width, height])
+ //     .words(df)
+ //     .rotate(function() { return ~~(Math.random() * 2) * 90; })
+ //     .font("Impact")
+ //     .fontSize(function(d) { return s(d.size); })
+ //     .on("end", draws)
+ //     .start();
+     // Store the current value so we can easily call renderValue
+    // from the resize method below, which doesn't give us an x
+    // value
+    instance.lastValue = x;
   
   },
 
