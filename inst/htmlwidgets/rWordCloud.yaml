@@ -12,6 +12,6 @@ dependencies:
           - fisheye.js
           - stopWord.js
 - name: jquery
-  version: 1.11.2
+  version: 1.7.2
   src: htmlwidgets/lib/jquery
-  script: jquery-1.11.2.min.js
+  script: jquery-1.7.2.min.js
