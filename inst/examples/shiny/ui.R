@@ -1,4 +1,4 @@
-library(solrCloud)
+library(rWordCloud)
 
 fluidPage(
   h1("testing Solr Cloud"),
@@ -9,7 +9,7 @@ fluidPage(
   <div id='chart1'>
   </div>
   "),
-  solrCloudOutput("solrCloud", width = "100%", height = 500)
+  d3TextCloudOutput("d3TextCloud", width = "100%", height = 500)
 
 )
 

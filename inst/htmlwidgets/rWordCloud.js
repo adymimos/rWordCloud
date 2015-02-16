@@ -1,6 +1,6 @@
 HTMLWidgets.widget({
 
-  name: 'solrCloud',
+  name: 'd3TextCloud',
 
   type: 'output',
   
@@ -15,11 +15,11 @@ HTMLWidgets.widget({
   var cloud = d3.layout.cloud().size([width, height])
       .padding(5);
   var svg = d3.select(el).append("svg")
-        .attr("class", "solrCloud");
+        .attr("class", "d3TextCloud");
         
     return {
       svg: svg,
-      solrCloud: cloud
+      rWordCloud: cloud
     }
 
   },

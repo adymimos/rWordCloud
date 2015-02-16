@@ -1,7 +1,7 @@
-library(solrCloud)
+library(rWordCloud)
 library(XML)
 function(input, output, session) {
-  output$solrCloud <- rendersolrCloud({
+  output$d3TextCloud <- renderd3TextCloud({
     doc.html = htmlTreeParse('http://en.wikipedia.org/wiki/R_(programming_language)',
                              useInternal = TRUE)
     
@@ -10,7 +10,7 @@ function(input, output, session) {
     doc.text = gsub('\\n', ' ', doc.text)
     
     data <- as.data.frame(doc.text)
-   solrCloud(content = doc.text, label = rownames(data))
+   d3TextCloud(content = doc.text, label = rownames(data))
   })
 }
 

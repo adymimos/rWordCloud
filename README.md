@@ -1,34 +1,28 @@
-# d3.js word cloud htmlwidget for R
-
-# solrCloud
-
-This is just an experimentation of https://github.com/ywng/Progressive-News-Cloud app ( this app no longer works, but i used its component )
-
-
-
-word count is performed by javascript which tends to make it slow. For simpler implementation checkout d3cloud branch
+rWordCloud - An htmlwidget interface to D3 word cloud
 
 to install
 ```
 require(devtools)
-install_github('adymimos/solrCloud')
+install_github('adymimos/rWordCloud')
 
 ```
 
 
 ```server.R
-library(solrCloud)
+library(rWordCloud)
 function(input, output, session) {
-output$solrCloud <- rendersolrCloud({
+output$d3TextCloud <- renderd3TextCloud({
    content <- c('test test1 test2 hi ho hurray hi hurray ho ho ho ho','ho hi uh ho','test')
    label <- c('a1','a2','a3')
-   solrCloud(content = content, label = label)
+   d3TextCloud(content = content, label = label)
   })
 }
 
-library(solrCloud)
+ui.R
+
+library(rWordCloud)
 fluidPage(
-solrCloudOutput("solrCloud", width = "100%", height = 500)
+d3TextCloudOutput("solrCloud", width = "100%", height = 500)
 )
 ```
 output
