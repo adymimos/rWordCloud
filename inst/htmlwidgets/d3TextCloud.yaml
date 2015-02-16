@@ -6,6 +6,7 @@ dependencies:
           - d3.js
           - d3.layout.cloud.js
 - name : custom
+  version: 0.0.1
   src: htmlwidgets/lib/custom
   script: 
           - fetchData.js

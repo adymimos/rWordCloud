@@ -54,7 +54,7 @@ HTMLWidgets.widget({
     // Retrieve our svg and bubble objects that were created in
     // the initialize method above
     var svg = instance.svg;
-    var cloud = instance.solrCloud;
+    var cloud = instance.rWordCloud;
     
     // Resize our svg element and bubble layout according to the
     // size of the actual DOM element
