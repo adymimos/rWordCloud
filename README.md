@@ -59,7 +59,7 @@ Example from shiny gallery using rWordCloud - https://github.com/rstudio/shiny-e
 code - https://github.com/adymimos/rWordCloud/tree/master/inst/examples/shiny/ex2/
 
 Interactive example - input$d3word gives you the word selected from the UI.
-![alt tag](https://raw.github.com/adymimos/rWordCloud/master/interavtive_example.png)
+![alt tag](https://raw.github.com/adymimos/rWordCloud/master/interactive_example.png)
 code - https://github.com/adymimos/rWordCloud/tree/master/inst/examples/shiny/ex3/
 
 
