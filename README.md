@@ -27,7 +27,7 @@ ui.R
 
 library(rWordCloud)
 fluidPage(
-d3TextCloudOutput("solrCloud", width = "100%", height = 500)
+d3TextCloudOutput("d3TextCloud", width = "100%", height = 500)
 )
 ```
 output
@@ -36,7 +36,7 @@ output
 
 ```
 d3Cloud
-library(solrCloud)
+library(rWordCloud)
 function(input, output, session) {
   output$d3Cloud <- renderd3Cloud({
    text <- c('d3','wordcloud','impressive','experiment','htmlwidgets','myfirstwidget')
@@ -54,3 +54,14 @@ fluidPage(
 d3CloudOutput("d3Cloud", width = "100%", height = 500)
 )
 ```
+Example from shiny gallery using rWordCloud - https://github.com/rstudio/shiny-examples/tree/master/082-word-cloud 
+![alt tag](https://raw.github.com/adymimos/rWordCloud/master/wordcloud_example.png)
+code - https://github.com/adymimos/rWordCloud/tree/master/inst/examples/shiny/ex2/
+
+Interactive example - input$d3word gives you the word selected from the UI.
+![alt tag](https://raw.github.com/adymimos/rWordCloud/master/interavtive_example.png)
+code - https://github.com/adymimos/rWordCloud/tree/master/inst/examples/shiny/ex3/
+
+
+
+

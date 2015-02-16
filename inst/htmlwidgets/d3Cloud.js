@@ -42,6 +42,11 @@ HTMLWidgets.widget({
           return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
         })
         .text(function(d) { return d.text; })
+		.on("click", function(d) { 
+            console.log("Selected words:"+d.text);  
+			if (typeof Shiny != 'undefined') {
+			Shiny.onInputChange('d3word',d.text) }
+		});
   }
    
 
