@@ -62,6 +62,6 @@ Interactive example - input$d3word gives you the word selected from the UI.
 ![alt tag](https://raw.github.com/adymimos/rWordCloud/master/interactive_example.png)
 code - https://github.com/adymimos/rWordCloud/tree/master/inst/examples/shiny/ex3/
 
-
+More info in my blog - http://bigdataanalyze.blogspot.com/2015/02/rwordcloud-htmlwidget-interface-for-d3.html
 
 
