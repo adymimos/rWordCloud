@@ -56,7 +56,7 @@ HTMLWidgets.widget({
 
 	//svg.remove(); //clearing old stuffs
      if ( instance.lastValue !== undefined) {
-        svg.remove();
+        instance.svg.remove();
         console.log('Clearing svg');
 	 var svg = d3.select(el).append("svg")
         .attr("class", "rWordCloud");
